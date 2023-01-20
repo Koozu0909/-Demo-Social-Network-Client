@@ -1,38 +1,262 @@
 .App {
-  text-align: center;
+  width: 100vw;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+a{
+  text-decoration: none;
+  color: aliceblue;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.post {
+  width: 400px;
+  height: 300px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-top: 50px;
+  border: 1px solid lightgray;
+  font-family: Arial, Helvetica, sans-serif;
+
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.post:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  cursor: pointer;
+}
+.post .post-title {
+  flex: 20%;
+  border-bottom: 1px solid lightgray;
+  background-color: dodgerblue;
+  display: grid;
+  place-content: center;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.post .post-text {
+  flex: 60%;
+  display: grid;
+  place-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.post .post-name {
+  flex: 20%;
+  border-top: 1px solid lightgray;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  background-color: dodgerblue;
+  color: white;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  justify-content:space-around;
+}
+.like-btn{
+  font-size: 30px;
+  color: white;
+}
+.unlike-btn{
+  font-size: 30px;
+  color: rgb(237, 226, 226);
+}
+
+/* CREATE POST PAGE CSS */
+
+.createPostPage {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100vw;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 500px;
+  height: auto;
+  padding: 20px;
+  border: 5px solid dodgerblue;
+  border-radius: 5px;
+}
+
+.formContainer #inputCreatePost {
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 2px solid grey;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.formContainer button {
+  margin-top: 15px;
+  height: 40px;
+  border: none;
+  background-color: lightskyblue;
+  border-radius: 5px;
+  color: white;
+}
+
+.formContainer button:hover {
+  cursor: pointer;
+  background-color: dodgerblue;
+}
+
+span {
+  color: red;
+}
+
+
+/* NAVBAR */
+
+.navbar {
+  width: 100%;
+  height: 70px;
+  background-color: dodgerblue;
+  display: flex;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.navbar  a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.navbar .login_info button {
+  color: white;
+  background-color:transparent ;
+  font-size: 15px;
+    width: 100px;
+  height: 100%;
+  margin-top: 2px;
+  align-items: center;
+  cursor: pointer;
+}
+.navbar .login_info {
+  display: flex;
+  width:65%;
+  justify-content: flex-end;
+}
+.navbar .login_info .user{
+  color: white;
+  background-color:transparent ;
+  font-size: 15px;
+    width: 100px;
+  height: 100%;
+  margin-top: 3px;
+  align-items: center;
+  cursor: pointer;
+}
+/* Home */
+.postHome{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+}
+
+
+/* INDIVIDUAL POST */
+.postPage {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.leftSide {
+  flex: 50%;
+  height: calc(100vh - 70px);
+  display: grid;
+  place-items: center;
+}
+
+.rightSide {
+  flex: 50%;
+  height: calc(100vh - 70px);
+  display: grid;
+  place-items: center;
+}
+
+#individual {
+  height: 500px;
+  width: 600px;
+  text-align: center;
+  justify-content: space-between;
+}
+
+#individual .title,
+#individual .footer {
+  font-size: 30px;
+  background-color:  dodgerblue;
+  height: 25%;
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+}
+
+#individual .postText {
+  font-size: 25px;
+  height: 50%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+rightSide .addCommentContainer {
+  flex: 20%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  margin-top: 25px;
+}
+
+.addCommentContainer input,
+button {
+  width: 200px;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+}
+
+.addCommentContainer button {
+  background-color: dodgerblue;
+  color: white;
+  cursor: pointer;
+}
+
+.addCommentContainer input {
+  border: 2px solid dodgerblue;
+}
+
+.rightSide .listOfComments {
+  flex: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.listOfComments .comment {
+  width: 70%;
+  height: auto;
+  padding: 30px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin-top: 20px;
 }
