@@ -16,17 +16,17 @@ function PostDetail() {
   let navigate = useNavigate()
 
   useEffect(() => {
-    axios.get(`http://localhost:3005/posts/byId/${id}`).then((res) => {
+    axios.get(`https://minor-eggnog-production.up.railway.app/posts/byId/${id}`).then((res) => {
       setPostObject(res.data);
     });
-    axios.get(`http://localhost:3005/comments/${id}`).then((res) => {
+    axios.get(`https://minor-eggnog-production.up.railway.app/comments/${id}`).then((res) => {
       setComments(res.data);
     });
   }, []);
 
   const addComment = () => {
     axios.post(
-        `http://localhost:3005/comments`,
+        `https://minor-eggnog-production.up.railway.app/comments`,
         {
           commentBody: newComment,
           PostId: id,
@@ -53,7 +53,7 @@ function PostDetail() {
 
   const deleteComment = (id)=>{
     axios.delete(
-      `http://localhost:3005/comments/${id}`,
+      `https://minor-eggnog-production.up.railway.app/comments/${id}`,
       {
         headers: {
           accessToken: localStorage.getItem("accessToken"),
@@ -70,7 +70,7 @@ function PostDetail() {
   }
   const deletePost = (id)=>{
     axios.delete(
-      `http://localhost:3005/posts/${id}`,
+      `https://minor-eggnog-production.up.railway.app/posts/${id}`,
       {
         headers: {
           accessToken: localStorage.getItem("accessToken"),
@@ -85,7 +85,7 @@ function PostDetail() {
     if(option === "title"){
       let newTitle = prompt("Enter new title");
       if(newTitle){
-        axios.put(  `http://localhost:3005/posts/title`, {newTitle:newTitle, id:id},
+        axios.put(  `https://minor-eggnog-production.up.railway.app/posts/title`, {newTitle:newTitle, id:id},
         {
           headers: {
             accessToken: localStorage.getItem("accessToken"),
@@ -98,7 +98,7 @@ function PostDetail() {
     }else{
       let newText = prompt("Enter new Text");
       if(newText){
-        axios.put(  `http://localhost:3005/posts/postText`, {newText:newText, id:id},
+        axios.put(  `https://minor-eggnog-production.up.railway.app/posts/postText`, {newText:newText, id:id},
         {
           headers: {
             accessToken: localStorage.getItem("accessToken"),

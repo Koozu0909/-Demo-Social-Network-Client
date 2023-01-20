@@ -32,7 +32,7 @@ useEffect(()=>{
 const onSubmit=(data)=>{
   
   console.log(data)
-  axios.post("http://localhost:3005/posts", data, {
+  axios.post("https://minor-eggnog-production.up.railway.app/posts", data, {
     headers: {
       accessToken: localStorage.getItem("accessToken"),
     },

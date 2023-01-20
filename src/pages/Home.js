@@ -18,7 +18,7 @@ function Home() {
         navigate("/login")
     }
     else{
-        axios.get("http://localhost:3005/posts",
+        axios.get("https://minor-eggnog-production.up.railway.app/posts",
         {
         headers: {
               accessToken: localStorage.getItem("accessToken"),
@@ -35,7 +35,7 @@ function Home() {
   const likeAPost = (postId) => {
     axios
       .post(
-        `http://localhost:3005/likes`,
+        `https://minor-eggnog-production.up.railway.app/likes`,
         { PostId: postId },
         {
           headers: {

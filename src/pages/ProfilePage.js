@@ -14,11 +14,11 @@ function ProfilePage() {
 
     
     useEffect(()=>{
-      axios.get(`http://localhost:3005/auth/basicinfo/${id}`).then((res)=>{
+      axios.get(`https://minor-eggnog-production.up.railway.app/auth/basicinfo/${id}`).then((res)=>{
         setUsername(res.data.username)
       })
 
-      axios.get(`http://localhost:3005/posts/byuserid/${id}`).then((res)=>{
+      axios.get(`https://minor-eggnog-production.up.railway.app/posts/byuserid/${id}`).then((res)=>{
         setListOfPost(res.data)
       })
     },[])

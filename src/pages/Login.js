@@ -13,7 +13,7 @@ function Login() {
 
   const login = () => {
     const data = { username: username, password: password };
-    axios.post("http://localhost:3005/auth/login", data).then((res) => {
+    axios.post("https://minor-eggnog-production.up.railway.app/auth/login", data).then((res) => {
         if(res.data.error){
           alert(res.data.error)
         }else{

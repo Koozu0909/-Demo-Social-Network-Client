@@ -25,7 +25,7 @@ const validationSchema= Yup.object().shape({
 const onSubmit=(data)=>{
 
     if(data.confirmPassword === data.password){
-        axios.post("http://localhost:3005/auth", data).then((res)=>{
+        axios.post("https://minor-eggnog-production.up.railway.app/auth", data).then((res)=>{
         console.log("work")
         navigate('/login')
     })

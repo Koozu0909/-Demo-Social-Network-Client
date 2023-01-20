@@ -6,7 +6,7 @@ function ChangePass() {
     const [oldPassword, setOldPassword] = useState("")
 
     const ChangePassWord = ()=>{
-        axios.put('http://localhost:3005/auth/changepassword', {oldPassword:oldPassword, newPassword:newPassword},
+        axios.put('https://minor-eggnog-production.up.railway.app/auth/changepassword', {oldPassword:oldPassword, newPassword:newPassword},
         {
             headers: {
               accessToken: localStorage.getItem("accessToken"),
