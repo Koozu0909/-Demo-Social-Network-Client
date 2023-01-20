@@ -22,7 +22,7 @@ function App() {
   const navigate = useNavigate()
 
   useEffect(()=>{
-    axios.get(`http://localhost:3005/auth/check`,{ headers:{
+    axios.get(`https://minor-eggnog-production.up.railway.app/auth/check`,{ headers:{
       accessToken:localStorage.getItem("accessToken") 
     }}).then((res)=>{
       if(res.data.error){
